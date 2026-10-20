@@ -49,8 +49,4 @@ graph TD
    I-->K([End])
    J-->K
 ```
-## bai 3: Tim so lon nhat trong mang n so nguyen
-```mermaid
-graph TD
-   A([Begin]) --> B[/Nhap n va day so a1,a2,...,an/]
 
