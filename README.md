@@ -1,29 +1,28 @@
 # bai-thuc-hanh-01
 ## bai 1: So do khoi giai phuong trinh ax^2+bx+c=0
 ```mermaid
-graph TD
-   A([Begin]) --> B[/a, b, c/]
-    B --> C{a = 0} 
-    %% Neu a=0 dung (True)
-    C -- True --> D[pt bac 1: bx+c=0]
-    D --> End([End]) 
-    %% Neu a=0 sai(False) 
-    C -- False --> E["Δ = $b^2$ - 4ac"]
-    E --> F{Δ < 0} 
-    %% Neu Delta < 0 dung (True)
-    F -- True --> G[/VN/]
-    G --> End
-    %% Neu Delta < 0 sai (False)
-    F -- False --> H{Delta = 0}
-    %% Neu Delta = 0 dung (True)
-    H -- True --> I["$x_1$ = $x_2$ = -b / 2a<br>(nghiem kep)"]
-    H -- True --> I["$x_1$ = $x_2$ = -b / 2a<br>(nghiem kep)"]
-    I --> J[/$x_1$,$x_2$ /]
-    J --> End
-    %% Neu Delta = 0 sai (False)
-    H -- False --> K[" = (-b - √Δ) / 2a<br> = (-b + $\sqrt{Delta}$ ) / 2"]
-    K --> L[/$x_1$<br>$x_2$/]
-    L --> End
+flowchart TD
+    Start([Bắt đầu]) --> Input[/Nhập a, b, c/]
+    Input --> CondA{a == 0?}
+    
+    %% Nhánh a == 0
+    CondA -- Đúng --> PtBac1[Giải phương trình bậc nhất: bx + c = 0]
+    PtBac1 --> End([Kết thúc])
+    
+    %% Nhánh a != 0
+    CondA -- Sai --> CalcDelta[Tính Delta = b^2 - 4ac]
+    CalcDelta --> CondDelta{Delta < 0?}
+    
+    CondDelta -- Đúng --> TxtVN[/Phương trình vô nghiệm/]
+    TxtVN --> End
+    
+    CondDelta -- Sai --> CondDeltaZero{Delta == 0?}
+    
+    CondDeltaZero -- Đúng --> TxtNK[/Nghiệm kép: x = -b / 2a/]
+    TxtNK --> End
+    
+    CondDeltaZero -- Sai --> Txt2N[/2 Nghiệm phân biệt:<br>x1 = -b + căn Delta / 2a<br>x2 = -b - căn Delta / 2a/]
+    Txt2N --> End
 ```
 ## bai 2: Kiem tra so nguyen duong n co phai so nguyen to khong
 ```mermaid
