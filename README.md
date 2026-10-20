@@ -50,16 +50,24 @@ graph TD
 ## Bài 3: Tìm số lớn nhất trong dãy số
 ```mermaid
 graph TD
-    Start([Bắt đầu]) --> Nhap[/Nhập số lượng n và dãy số A/]
-    Nhap --> KhoiTao[Đặt max = số đầu tiên A[0] <br> Đặt vị trí i = 1]
+    Start([1. Bắt đầu]) --> Nhap[/2. Nhập số lượng phần tử n <br> và dãy số gồm n số/]
     
-    KhoiTao --> KiemTrai{i < n?}
-    KiemTrai -- Đúng --> SoSanh{Số tiếp theo A[i] > max?}
-SoSanh -- Đúng --> CậpNhật[Đổi max = A[i]] --> ChuyenSo[Chuyển sang số tiếp theo: i = i + 1]
-    SoSanh -- Sai --> ChuyenSo
-    ChuyenSo --> KiemTrai
+    %% Bước đặt giả định ban đầu
+    Nhap --> KhoiTao[3. Tạm coi số đầu tiên là lớn nhất: Đặt max = Số đầu tiên <br> Đặt vị trí kiểm tra tiếp theo: i = 2]
     
-    KiemTrai -- Sai --> InKetQua[/In ra số lớn nhất là max/] --> End([Kết thúc])
+    %% Vòng lặp kiểm tra từng số một
+    KhoiTao --> VongLap{4. Đã kiểm tra <br> hết dãy số chưa? <br> biến i > n?}
+    
+    VongLap -- Chưa xét hết --> SoSanh{5. Số ở vị trí thứ i <br> có lớn hơn max không?}
+    
+    %% Nhánh cập nhật max mới
+    SoSanh -- Có, lớn hơn --> CapNhat[6. Đổi max mới = Số thứ i] --> TangI[7. Chuyển sang số tiếp theo: i = i + 1]
+    SoSanh -- Không lớn hơn --> TangI
+    TangI --> VongLap
+    
+    %% Nhánh kết thúc khi đã xem hết các số
+    VongLap -- Đã xét hết --> InKetQua[/8. In ra số lớn nhất lưu trong biến max/]
+    InKetQua --> End([9. Kết thúc])
 ```
 ## Bài 4: Tìm Bội số chung nhỏ nhất (BCNN)
 ```mermaid
