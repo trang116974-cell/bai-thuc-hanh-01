@@ -63,7 +63,7 @@ SoSanh -- Đúng --> CậpNhật[Đổi max = A[i]] --> ChuyenSo[Chuyển sang s
 ```
 ## Bài 4: Tìm Bội số chung nhỏ nhất (BCNN)
 ```mermaid
-graph TD
+graph TD  
     Start([Bắt đầu]) --> Nhap[/Nhập 2 số nguyên dương a và b/]
     Nhap --> LuuTich[Tính và lưu Tích = a * b]
     
