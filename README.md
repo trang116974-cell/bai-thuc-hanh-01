@@ -15,7 +15,7 @@ graph TD
     KiemTraB -- False --> PtBac1[ x = -c / b] --> InX1[/In nghiem x/]
     
     %% Nếu a != 0
-    KiemTraA -- False --> TinhDelta[ Delta = $\sqrt{b}$ - 4ac]
+    KiemTraA -- False --> TinhDelta[ Delta = b^2 - 4ac]
     TinhDelta --> KiemTraDelta{Delta < 0?}
     KiemTraDelta -- True --> VN2[/Pt vo nghiem/]
     KiemTraDelta -- False --> DeltaBang0{Delta == 0?}
