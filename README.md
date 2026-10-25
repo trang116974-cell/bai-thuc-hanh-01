@@ -4,26 +4,26 @@
 ## Bài 1: Giải phương trình ax² + bx + c = 0
 ```mermaid
 graph TD
-    Start([Bắt đầu]) --> Nhap[/Nhập 3 số: a, b, c/]
+    Start([Bat dau]) --> Nhap[/Nhap a, b, c/]
     Nhap --> KiemTraA{a == 0?}
     
-    %% Nếu a = 0, trở thành pt bậc 1: bx + c = 0
-    KiemTraA -- Đúng --> KiemTraB{b == 0?}
-    KiemTraB -- Đúng --> KiemTraC{c == 0?}
-    KiemTraC -- Đúng --> VSN[/Phương trình có Vô Số Nghiệm/]
-    KiemTraC -- Sai --> VN1[/Phương trình Vô Nghiệm/]
-    KiemTraB -- Sai --> PtBac1[Tính nghiệm: x = -c / b] --> InX1[/In nghiệm x/]
+    %% Neu a = 0,  pt bac 1: bx + c = 0
+    KiemTraA -- True --> KiemTraB{b == 0?}
+    KiemTraB -- True --> KiemTraC{c == 0?}
+    KiemTraC -- True --> VSN[/Pt vo so nghiem/]
+    KiemTraC -- False --> VN1[/Pt vo nghiem/]
+    KiemTraB -- False --> PtBac1[ x = -c / b] --> InX1[/In nghiem x/]
     
-    %% Nếu a != 0, giải phương trình bậc 2 thông thường
-    KiemTraA -- Sai --> TinhDelta[Tính Delta = b² - 4ac]
+    %% Nếu a != 0
+    KiemTraA -- False --> TinhDelta[ Delta = $\sqrt{b}$ - 4ac]
     TinhDelta --> KiemTraDelta{Delta < 0?}
-    KiemTraDelta -- Đúng --> VN2[/Phương trình Vô Nghiệm/]
-    KiemTraDelta -- Sai --> DeltaBang0{Delta == 0?}
+    KiemTraDelta -- True --> VN2[/Pt vo nghiem/]
+    KiemTraDelta -- False --> DeltaBang0{Delta == 0?}
     
-    DeltaBang0 -- Đúng --> TinhNghiemKep[Tính nghiệm kép: x = -b / 2a] --> InKep[/In nghiệm kép x/]
-    DeltaBang0 -- Sai --> Tinh2Nghiem[Tính x1 và x2 theo công thức] --> In2Nghiem[/In 2 nghiệm x1, x2/]
+    DeltaBang0 -- True --> TinhNghiemKep[ Tinh nghiem kep :x = -b / 2a] --> InKep[/In nghiem kep x/]
+    DeltaBang0 -- False --> Tinh2Nghiem[Tinh x1 và x2 ] --> In2Nghiem[/In 2 nghiem x1, x2/]
     
-    VSN --> End([Kết thúc])
+    VSN --> End([Ket thuc])
     VN1 --> End
     InX1 --> End
     VN2 --> End
