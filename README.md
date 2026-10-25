@@ -1,7 +1,7 @@
 # bai-thuc-hanh-01
 # BÀI TẬP CHƯƠNG 1
 
-## Bài 1: Giải phương trình ax² + bx + c = 0
+## Bài 1: Giải phương trình ax^2 + bx + c = 0
 ```mermaid
 graph TD
     Start([Bat dau]) --> Nhap[/Nhap a, b, c/]
@@ -33,24 +33,24 @@ graph TD
 ## Bài 2: Kiểm tra Số Nguyên Tố
 ```mermaid
 graph TD
-    Start([Bắt đầu]) --> Nhap[/Nhập số nguyên n/]
+    Start([Bat dau]) --> Nhap[/Nhap so nguyen n/]
     Nhap --> KiemTraN{n < 2?}
     
-    KiemTraN -- Đúng --> KhongPhai1[/KHÔNG PHẢI số nguyên tố/] --> End([Kết thúc])
+    KiemTraN -- True --> KhongPhai1[/Khong là so nguyen to/] --> End([Kết thúc])
     
-    KiemTraN -- Sai --> KhoiTao[Đặt biến i = 2]
+    KiemTraN -- False --> KhoiTao[ i = 2]
     KhoiTao --> VongLap{i * i <= n?}
     
-    VongLap -- Đúng --> ChiaHet{n có chia hết cho i không?}
-    ChiaHet -- Đúng --> KhongPhai2[/KHÔNG PHẢI số nguyên tố/] --> End
-    ChiaHet -- Sai --> TangI[Tăng i thêm 1 đơn vị] --> VongLap
+    VongLap -- True --> ChiaHet{n chia het cho 2 ?}
+    ChiaHet -- True --> KhongPhai2[/Khong la so nguyen to/] --> End
+    ChiaHet -- False --> TangI[ i + 1 ] --> VongLap
     
-    VongLap -- Sai --> LaSNT[/LÀ số nguyên tố/] --> End
+    VongLap -- False --> LaSNT[/La so nguyen to/] --> End
 ```
 ## Bài 3: Tìm số lớn nhất trong dãy số
 ```mermaid
 graph TD
-    Start([1. Bắt đầu]) --> Nhap[/2. Nhập số lượng phần tử n <br> và dãy số gồm n số/]
+    Start([1.Bat dau]) --> Nhap[/2.Nhap so luong tu n va day so gom n so /]
     
     %% Bước đặt giả định ban đầu
     Nhap --> KhoiTao[3. Tạm coi số đầu tiên là lớn nhất: Đặt max = Số đầu tiên <br> Đặt vị trí kiểm tra tiếp theo: i = 2]
