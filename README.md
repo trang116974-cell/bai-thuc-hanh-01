@@ -53,33 +53,33 @@ graph TD
     Start([1.Bat dau]) --> Nhap[/2.Nhap so luong tu n va day so gom n so /]
     
     %% Bước đặt giả định ban đầu
-    Nhap --> KhoiTao[3. Tạm coi số đầu tiên là lớn nhất: Đặt max = Số đầu tiên <br> Đặt vị trí kiểm tra tiếp theo: i = 2]
+    Nhap --> KhoiTao[ Dat max = So thu nhat <br> Dat vi tri tiep theo: i = 2]
     
-    %% Vòng lặp kiểm tra từng số một
-    KhoiTao --> VongLap{4. Đã kiểm tra <br> hết dãy số chưa? <br> biến i > n?}
+    %% Kiem tra vong lap tung so :
+    KhoiTao --> VongLap{ Kiem tra <br> het day chua ? <br> i > n?}
     
-    VongLap -- Chưa xét hết --> SoSanh{5. Số ở vị trí thứ i <br> có lớn hơn max không?}
+    VongLap -- Chua xet het --> SoSanh{ So o vi tri thu i <br> lon hon max ko ?}
     
-    %% Nhánh cập nhật max mới
-    SoSanh -- Có, lớn hơn --> CapNhat[6. Đổi max mới = Số thứ i] --> TangI[7. Chuyển sang số tiếp theo: i = i + 1]
-    SoSanh -- Không lớn hơn --> TangI
+    %% Cap nhat max moi
+    SoSanh -- Lon hon --> CapNhat[Doi max moi = so thu i] --> TangI[ Chuyen sang so tiep theo: i = i + 1]
+    SoSanh -- Ko lon hon --> TangI
     TangI --> VongLap
     
-    %% Nhánh kết thúc khi đã xem hết các số
-    VongLap -- Đã xét hết --> InKetQua[/8. In ra số lớn nhất lưu trong biến max/]
-    InKetQua --> End([9. Kết thúc])
+    %% Ket thuc khi het day
+    VongLap -- Het day --> InKetQua[/In ra so lon nhat max khi xet het day/]
+    InKetQua --> End([Ket thuc])
 ```
 ## Bài 4: Tìm Bội số chung nhỏ nhất (BCNN)
 ```mermaid
 graph TD  
-    Start([Bắt đầu]) --> Nhap[/Nhập 2 số nguyên dương a và b/]
-    Nhap --> LuuTich[Tính và lưu Tích = a * b]
+    Start([Bat dau]) --> Nhap[/Nhap 2 so duong a va b/]
+    Nhap --> LuuTich[ Tich = a * b]
     
-    LuuTich --> VongLap{b khác 0?}
-    VongLap -- Đúng --> ChiaDu[Tính số dư r = a chia lấy dư cho b]
-    ChiaDu --> GanA[Gán a = b]
-    GanA --> GanB[Gán b = r] --> VongLap
+    LuuTich --> VongLap{ b != 0? }
+    VongLap -- Đúng --> ChiaDu[Tinh so du r = a chia lay du cho b]
+    ChiaDu --> GanA[ a = b]
+    GanA --> GanB[ b = r] --> VongLap
     
-    VongLap -- Sai --> TinhBCNN[Tính BCNN = Tích / a]
-    TinhBCNN --> InBCNN[/In kết quả BCNN/] --> End([Kết thúc])
+    VongLap -- Sai --> TinhBCNN[ BCNN = Tich / a]
+    TinhBCNN --> InBCNN[/In ket qua BCNN/] --> End([Ket thuc])
 ```
