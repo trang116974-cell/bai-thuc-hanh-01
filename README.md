@@ -2,9 +2,9 @@
 # BÀI TẬP CHƯƠNG 1
 
 ## Bài 1: Giải phương trình ax^2 + bx + c = 0
-main.c
-flowchart.png
-README.md
+    main.c
+    flowchart.png
+    README.md
     Start([Bat dau]) --> Nhap[/Nhap a, b, c/]
     Nhap --> KiemTraA{a == 0?}
     
