@@ -2,8 +2,9 @@
 # BÀI TẬP CHƯƠNG 1
 
 ## Bài 1: Giải phương trình ax^2 + bx + c = 0
-```mermaid
-graph TD
+main.c
+flowchart.png
+README.md
     Start([Bat dau]) --> Nhap[/Nhap a, b, c/]
     Nhap --> KiemTraA{a == 0?}
     
@@ -29,7 +30,7 @@ graph TD
     VN2 --> End
     InKep --> End
     In2Nghiem --> End
-```
+
 ## Bài 2: Kiểm tra Số Nguyên Tố
 ```mermaid
 graph TD
