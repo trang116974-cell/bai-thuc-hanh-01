@@ -12,7 +12,7 @@ graph TD
     KiemTraC -- True --> VSN[/Pt vo so nghiem/]
     KiemTraC -- False --> VN1[/Pt vo nghiem/]
     KiemTraB -- False --> PtBac1[ x = -c / b] --> InX1[/In nghiem x/]
-    %% Nếu a != 0
+    %% Neu a != 0
     KiemTraA -- False --> TinhDelta[ Delta = b^2 - 4ac]
     TinhDelta --> KiemTraDelta{Delta < 0?}
     KiemTraDelta -- True --> VN2[/Pt vo nghiem/]
@@ -26,6 +26,46 @@ graph TD
     InKep --> End
     In2Nghiem --> End
 ```
+#include <stdio.h>
+#include <math.h>
+void Giaiphuongtrinhbac2(float a,float b, float c)
+{
+	printf("Giai phuong trinh: %.2fx^2 + %.2fx + %.2f = 0\n",a,b,c);
+	if(a==0){
+		if(b==0){
+			if(c==0){
+				printf("Phuong trinh co vo so nghiem\n");
+			}
+			else{
+				printf("Phuong trinh vo nghiem\n");
+			}
+		}else {
+			float x = -c/b;
+			printf("Phuong trinh co nghiem duy nhat %.2f\n",x);
+		}
+	}
+	else {
+		float delta = b*b - 4*a*c;
+		printf("%2.f\n",delta);
+		if(delta<0){
+			printf("Phuong trinh vo nghiem\n");
+		}else{
+			float x1= (-b-sqrt(delta) / 2*a);
+			float x2= (-b+sqrt(delta) / 2*a);
+			printf("Phuong trinh co hai nghiem phan biet\n");
+			printf("x1= %.2f\n",x1);
+			printf("x2= %.2f\n",x2);	
+		}
+	}	
+}
+int main()
+{
+	float a,b,c;
+	printf("Nhap he so a,b,c:");
+	scanf("%f %f %f",&a,&b,&c);
+	Giaiphuongtrinhbac2(a,b,c);
+	return 0;
+}
 ## Bai 2: Ktra so nguyen to
 ```mermaid
 graph TD
@@ -68,17 +108,3 @@ graph TD
     VongLap -- Sai --> TinhBCNN[ BCNN = Tich / a]
     TinhBCNN --> InBCNN[/In ket qua BCNN/] --> End([Ket thuc])
 ```
-## Bai 5: Ktra N cos phai so nguyen to khong?
-#include <stdio.h>
-int main()
-{
-    int a,b;
-    printf("Nhap a,b");
-    scanf("%d %d",&a,&b);
-    while(a!=b){
-        if(a>b) a-=b;
-        else b-=a;
-    }
-    printf("Ket qua la %d",a);
-    return 0;
-}
